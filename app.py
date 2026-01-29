@@ -75,9 +75,8 @@ class MainWindow(QMainWindow):
         self.tree.customContextMenuRequested.connect(self._open_context_menu)
 
         header = self.tree.header()
-        header.setSectionResizeMode(0, QHeaderView.Stretch)
-        for col in (1, 2, 3):
-            header.setSectionResizeMode(col, QHeaderView.ResizeToContents)
+        for col in range(4):
+            header.setSectionResizeMode(col, QHeaderView.Interactive)
 
         self.search = QLineEdit(self)
         self.search.setPlaceholderText("Search in current folder (filters by name, case-insensitive)…")
